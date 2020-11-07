@@ -14,7 +14,7 @@ INSERT INTO artist (artist_id, name) VALUES
 (1, 'Jimmy Eat World'),
 (2, 'NSYNC'),
 (3, 'Daft Punk'),
-(4, 'Neo')
+(4, 'Neo');
 
 
 CREATE TABLE album (
