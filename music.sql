@@ -6,7 +6,7 @@ GO
 
 CREATE TABLE artist (
   artist_id int NOT NULL PRIMARY KEY,
-  name varchar(255) DEFAULT NULL
+  name varchar(255) DEFAULT NULL 
 );
 
 
@@ -20,7 +20,8 @@ INSERT INTO artist (artist_id, name) VALUES
 CREATE TABLE album (
   album_id int NOT NULL PRIMARY KEY,
   title varchar(255) DEFAULT NULL,
-  artist_id int DEFAULT Null REFERENCES artist (artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  artist_id int DEFAULT Null REFERENCES artist (artist_id) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION 
 );
 
 
@@ -50,8 +51,10 @@ CREATE TABLE track (
   len int DEFAULT NULL,
   rating int DEFAULT NULL,
   count int DEFAULT NULL,
-  album_id int DEFAULT NULL REFERENCES album (album_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  genre_id int DEFAULT NULL REFERENCES genre (genre_id) ON DELETE CASCADE ON UPDATE CASCADE
+  album_id int DEFAULT NULL REFERENCES album (album_id)
+  ON DELETE NO ACTION ON UPDATE NO ACTION,
+  genre_id int DEFAULT NULL REFERENCES genre (genre_id)
+  ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 INSERT INTO track (track_id, title, len, rating, count, album_id, genre_id) VALUES
